@@ -45,20 +45,29 @@ body.onkeydown = function(e) {
     } else if (img_me.X >= 720 - 30) {
         right = false;
     }
-    if (img_me.X < 270) {
+    if (img_me.X <= 270) {
         if (img_me.Y < 220 - 50) {
             left = false;
-            up = false;
         } else if (img_me.Y > 245 - 50) {
             left = false;
-            down = false;
         }
-    } else if (img_me.X > 330 - 30) {
+    } else if (img_me.X >= 330 - 30) {
         if (img_me.Y < 220 - 50) {
             right = false;
-            up = false;
         } else if (img_me.Y > 245 - 50) {
             right = false;
+        }
+    }
+    if (img_me.Y <= 220 - 50) {
+        if (img_me.X < 270) {
+            up = false;
+        } else if (img_me.X > 330 - 30) {
+            up = false;
+        }
+    } else if (img_me.Y >= 245 - 50) {
+        if (img_me.X < 270) {
+            down = false;
+        } else if (img_me.X > 330 - 30) {
             down = false;
         }
     }
