@@ -12,7 +12,9 @@ var img_land = new Image();
 img_land.src = "http://www.6m5m.com/data/uploads/2017/04/29/319045903fb3418a11.jpg";
 img_land.onload = function() {
     ctx.drawImage(img_land, 0, 0);
-    ctx.drawImage(img_me, 0, 0, 32, 48, img_me.X, img_me.Y, 32, 48);
+    ctx.fillText(new Date(), 0, 10);
+    walk_animate();
+    //ctx.drawImage(img_me, 0, 0, 32, 48, img_me.X, img_me.Y, 32, 48);
 }
 
 var img_me = new Image();
@@ -72,19 +74,9 @@ body.onkeydown = function(e) {
         }
     }
     move(e.keyCode, left, right, up, down);
-    ctx.clearRect;
+    ctx.clearRect(0, 0, 720, 495);
     ctx.drawImage(img_land, 0, 0);
-    ctx.drawImage(img_me, 0, 0, 32, 48, img_me.X, img_me.Y, 32, 48);
-}
-
-function move(keycode, left, right, up, down) {
-    if (keycode == 37 && left) {
-        img_me.X -= 5;
-    } else if (keycode == 38 && up) {
-        img_me.Y -= 5;
-    } else if (keycode == 39 && right) {
-        img_me.X += 5;
-    } else if (keycode == 40 && down) {
-        img_me.Y += 5;
-    }
+    ctx.drawImage(img_me, walk, direction, 32, 48, img_me.X, img_me.Y, 32, 48);
+    //ctx.fillStyle();
+    ctx.fillText(new Date(), 0, 10);
 }
